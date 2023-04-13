@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-harada-method-plugin",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "This plugin is used to visualize the harada method. Create your own 1 goal, 8 plans, and 64 actions",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
