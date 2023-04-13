@@ -9,12 +9,14 @@ on:
 env:
   PLUGIN_NAME: draw-harada-method # Change this to the name of your plugin-id folder
 
+permissions:
+  contents: 'read'
+  id-token: 'write'
+  issues: 'write' #__This fixed the HttpError: Resource not accessible by integration
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write # This is required for requesting the JWT
-      contents: read  # This is required for actions/checkout
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
