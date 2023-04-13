@@ -1,9 +1,9 @@
 {
-	"id": "obsidian-harada-method-plugin",
-	"name": "Obsidian Harada Method Plugin",
+	"id": "draw-harada-method",
+	"name": "Draw Harada Method",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This plugin is used to visualize the harada method. Create your own 1 goal, 8 plans, and 64 actions",
+	"description": "This plugin is used to draw the harada method. Create your own 1 goal, 8 plans, and 64 actions",
 	"author": "yildbs",
 	"authorUrl": "https://github.com/yildbs",
 	"fundingUrl": "https://paypal.me/yildbs?country.x=KR&locale.x=ko_KR",
