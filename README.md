@@ -1,8 +1,12 @@
 # Obsidian Harada Method Plugin
 This plugin is a tool to draw The Harada Method famously used by Shohei Otani, a Japanese baseball player. The Harada Method has various names such as Mandara chart, Mandal-art, and Open window 64 chart. Anyway, the key point of The Harada Method is that it helps you set goals, break them down, and achieve them.
 
-# Installation
-Install from the Community Plugin list by searching "harada method" 
+# Installation from community
+Install from the Community Plugin list by searching "harada method" (Sorry not yet accepted)
+
+# Installation directly
+Copy main.js, manifest.json, style.css files into your_obsidian_valut/.obsidian/plugin/draw-hara-methd/ directory
+Release Link: https://github.com/yildbs/obsidian-harada-method-plugin/releases
 
 # Usage
 - Open code block with name "harada"
