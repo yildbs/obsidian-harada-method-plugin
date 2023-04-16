@@ -5,7 +5,7 @@ This plugin is a tool to draw The Harada Method famously used by Shohei Otani, a
 Install from the Community Plugin list by searching "harada method" (Sorry not yet accepted)
 
 # Installation directly
-Copy main.js, manifest.json, style.css files into your_obsidian_valut/.obsidian/plugin/draw-hara-methd/ directory
+Copy main.js, manifest.json, style.css files into your_obsidian_valut/.obsidian/plugin/draw-harada-method/ directory
 Release Link: https://github.com/yildbs/obsidian-harada-method-plugin/releases
 
 # Usage
