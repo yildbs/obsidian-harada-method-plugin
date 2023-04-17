@@ -133,7 +133,23 @@ export class HaradaMethod extends MarkdownRenderChild {
           cell.id = 'action';
         }
 
-        cell.textContent = content;
+        // check internal link
+        const regex = /\[\[(.*?)\]\]/;
+        const match = content.match(regex);
+        if (match != null){
+          const matched_text = match[1];
+          const split = matched_text.split("|");
+          const path = split[0];
+          let title = split[1] ?? split[0];
+
+          const a = cell.createEl('a');
+          a.text = title;
+          a.href = path;
+          a.addClass("internal-link");
+        }
+        else{
+          cell.textContent = content;
+        }
         row.appendChild(cell);
       }
 
