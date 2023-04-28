@@ -96,7 +96,7 @@ export class HaradaMethod extends MarkdownRenderChild {
 
         if(box_index == 4 && inbox_index == 4){
           content = goal;
-          cell.id = 'goal';
+          cell.classList.add('goal');
         }
         else if(box_index == 4){
           let keyplan_index = inbox_index;
@@ -104,7 +104,7 @@ export class HaradaMethod extends MarkdownRenderChild {
             keyplan_index = inbox_index - 1;
           }
           content = keyplans[keyplan_index];
-          cell.id = 'keyplan';
+          cell.classList.add('keyplan');
         }
         else if(inbox_index == 4){
           let keyplan_index = box_index;
@@ -112,7 +112,7 @@ export class HaradaMethod extends MarkdownRenderChild {
             keyplan_index = box_index - 1;
           }
           content = keyplans[keyplan_index];
-          cell.id = 'keyplan';
+          cell.classList.add('keyplan');
         }
         else{
           let keyplan_index = box_index;
@@ -130,7 +130,7 @@ export class HaradaMethod extends MarkdownRenderChild {
           catch(err){
             console.log(err);
           }
-          cell.id = 'action';
+          cell.classList.add('action');
         }
 
         // check internal link

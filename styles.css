@@ -39,18 +39,18 @@ td.bottom{
     border-bottom: 3px solid black;
 }
 
-#action{
+td.action{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0); 
 }
 
-#keyplan{
+td.keyplan{
     background-color: rgb(239, 255, 201);
     color: rgb(0, 0, 0); 
     font-size: 25px;
 }
 
-#goal{
+td.goal{
     background-color: rgb(255, 229, 172);
     color: rgb(0, 0, 0); 
     font-size: 30px;
