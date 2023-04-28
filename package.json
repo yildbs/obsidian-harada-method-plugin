@@ -1,6 +1,6 @@
 {
 	"name": "draw-harada-method",
-	"version": "1.0.6",
+	"version": "1.0.14",
 	"description": "This plugin is used to draw the harada method. Create your own 1 goal, 8 plans, and 64 actions",
 	"main": "main.js",
 	"scripts": {

@@ -1,7 +1,7 @@
 {
 	"id": "draw-harada-method",
 	"name": "Draw Harada Method",
-	"version": "1.0.13",
+	"version": "1.0.14",
 	"minAppVersion": "0.15.0",
 	"description": "This plugin is used to draw the harada method. Create your own 1 goal, 8 plans, and 64 actions",
 	"author": "yildbs",
