@@ -3,6 +3,7 @@ import { HaradaMethod } from "./harada";
 
 // Remember to rename these classes and interfaces!
 
+
 interface ObsidianHaradaMethodPluginSettings {
 	goalBackgroundColor: string;
 	keyplanBackgroundColor: string;
