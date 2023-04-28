@@ -1,18 +1,24 @@
-import { Plugin, MarkdownPostProcessorContext, PluginSettingTab, App, Setting, ColorComponent } from 'obsidian';
+import { Plugin, MarkdownPostProcessorContext, PluginSettingTab, App, Setting, ColorComponent, TextComponent } from 'obsidian';
 import { HaradaMethod } from "./harada";
 
 // Remember to rename these classes and interfaces!
 
 interface ObsidianHaradaMethodPluginSettings {
-	goalColor: string;
-	keyplanColor: string;
-	actionColor: string;
+	goalBackgroundColor: string;
+	keyplanBackgroundColor: string;
+	actionBackgroundColor: string;
+	goalTextColor: string;
+	keyplanTextColor: string;
+	actionTextColor: string;
 }
 
 const DEFAULT_SETTINGS: ObsidianHaradaMethodPluginSettings = {
-	goalColor: "#FFE5AC",
-	keyplanColor: '#EFFFC9',
-	actionColor: '#FFFFFF',
+	goalBackgroundColor: "#FFE5AC",
+	keyplanBackgroundColor: '#EFFFC9',
+	actionBackgroundColor: '#FFFFFF',
+	goalTextColor: "#000000",
+	keyplanTextColor: '#000000',
+	actionTextColor: '#00000',
 }
 
 export default class ObsidianHaradaMethodPlugin extends Plugin {
@@ -37,15 +43,18 @@ export default class ObsidianHaradaMethodPlugin extends Plugin {
 
 	async applySettings(){
 		Array.from(document.getElementsByClassName("goal")).forEach((element) => {
-			(element as HTMLElement).style.backgroundColor = this.settings.goalColor;
+			(element as HTMLElement).style.backgroundColor = this.settings.goalBackgroundColor;
+			(element as HTMLElement).style.color = this.settings.goalTextColor;
 		});
 
 		Array.from(document.getElementsByClassName("keyplan")).forEach((element) => {
-			(element as HTMLElement).style.backgroundColor = this.settings.keyplanColor;
+			(element as HTMLElement).style.backgroundColor = this.settings.keyplanBackgroundColor;
+			(element as HTMLElement).style.color = this.settings.keyplanTextColor;
 		});
 
 		Array.from(document.getElementsByClassName("action")).forEach((element) => {
-			(element as HTMLElement).style.backgroundColor = this.settings.actionColor;
+			(element as HTMLElement).style.backgroundColor = this.settings.actionBackgroundColor;
+			(element as HTMLElement).style.color = this.settings.actionTextColor;
 		});
 	}
 
@@ -89,36 +98,62 @@ class ObsidianHaradaMethodPluginSettingTab extends PluginSettingTab {
 		const {containerEl} = this;
 
 		containerEl.empty();
-		containerEl.createEl('h2', {text: 'Draw Harada Method Plugin Settings'});
+		containerEl.createEl('h2', {text: 'Colors'});
 
 		new Setting(containerEl)
-			.setName('Goal Color')
-			.setDesc('Goal Color')
+			.setName('Goal Background Color')
 			.addColorPicker(cb => cb
-				.setValue(this.plugin.settings.goalColor)
+				.setValue(this.plugin.settings.goalBackgroundColor)
 				.onChange(async (value) => {
-					this.plugin.settings.goalColor = value;
+					this.plugin.settings.goalBackgroundColor = value;
 					await this.plugin.saveSettings();
 				}));
 
 		new Setting(containerEl)
-			.setName('Keyplan Color')
-			.setDesc('Keyplan Color')
+			.setName('Goal Text Color')
 			.addColorPicker(cb => cb
-				.setValue(this.plugin.settings.keyplanColor)
+				.setValue(this.plugin.settings.goalTextColor)
 				.onChange(async (value) => {
-					this.plugin.settings.keyplanColor = value;
+					this.plugin.settings.goalTextColor = value;
+					await this.plugin.saveSettings();
+
+				}));
+
+		new Setting(containerEl)
+			.setName('Keyplan Background Color')
+			.addColorPicker(cb => cb
+				.setValue(this.plugin.settings.keyplanBackgroundColor)
+				.onChange(async (value) => {
+					this.plugin.settings.keyplanBackgroundColor = value;
 					await this.plugin.saveSettings();
 				}));
 
 		new Setting(containerEl)
-			.setName('Action Color')
-			.setDesc('Action Color')
+			.setName('Keyplan Text Color')
 			.addColorPicker(cb => cb
-				.setValue(this.plugin.settings.actionColor)
+				.setValue(this.plugin.settings.keyplanTextColor)
 				.onChange(async (value) => {
-					this.plugin.settings.actionColor = value;
+					this.plugin.settings.keyplanTextColor = value;
 					await this.plugin.saveSettings();
 				}));
+
+		new Setting(containerEl)
+			.setName('Action Background Color')
+			.addColorPicker(cb => cb
+				.setValue(this.plugin.settings.actionBackgroundColor)
+				.onChange(async (value) => {
+					this.plugin.settings.actionBackgroundColor = value;
+					await this.plugin.saveSettings();
+				}));
+
+		new Setting(containerEl)
+			.setName('Action Text Color')
+			.addColorPicker(cb => cb
+				.setValue(this.plugin.settings.actionTextColor)
+				.onChange(async (value) => {
+					this.plugin.settings.actionTextColor = value;
+					await this.plugin.saveSettings();
+				}));
+
 	}
 }
